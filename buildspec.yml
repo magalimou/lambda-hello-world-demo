@@ -6,8 +6,12 @@ phases:
       - echo "Starting build process..."
   build:
     commands:
-      - echo "Zipping source code..."
-      - zip -r deployment.zip index.js
+      - echo "Build step (no zip needed for Lambda here)..."
+
 artifacts:
   files:
-    - deployment.zip
+    - index.js
+    - package.json
+    - node_modules/**/*
+  discard-paths: yes
+
